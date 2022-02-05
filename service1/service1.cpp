@@ -226,6 +226,8 @@ DWORD WINAPI ServiceWorkerThread(LPVOID lpParam)
 // When this function returns, the thread goes away.  See MSDN for more details.
     fprintf(debugFile, "This is the beginnig of the worker thread\n");
 
+
+    //Printing a message once a second until we are told to stop
     while (WaitForSingleObject(g_ServiceStopEvent, 0) != WAIT_OBJECT_0)
     {
         fprintf(debugFile, "\nPrinting once a second\n");
